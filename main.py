@@ -41,7 +41,7 @@ def deploy_model(
             )
 
         try:
-            model_response = model(to_predict)[0]['generated_text']
+            model_response = model(to_predict)
             logger.info('model response successfully retrieved')
             model_response = {
                 'choices' : [{'text' : model_response}]
