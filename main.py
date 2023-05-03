@@ -4,12 +4,15 @@ import waitress
 import logging
 import click
 import json
+import sys
 
 logger = logging.getLogger(__name__)
 
 logging.basicConfig(
     format = '%(levelname)s | %(asctime)s | %(message)s',
-    datefmt = '%Y-%m-%dT%H:%M:%SZ'
+    datefmt = '%Y-%m-%dT%H:%M:%SZ',
+    stream = sys.stdout,
+    level = logging.INFO
     )
 
 def deploy_model(
